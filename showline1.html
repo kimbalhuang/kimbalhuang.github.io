@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Awesome go-echarts</title>
+	<script type="text/javascript"  src="jquery/jquery.js"></script>
+    <script src="https://go-echarts.github.io/go-echarts-assets/assets/echarts.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <style> .container {display: flex;justify-content: center;align-items: center;} .item {margin: auto;} </style> 
+<div class="container">
+    <div class="item" id="yPPayBhICApW" style="width:900px;height:500px;"></div>
+</div>
+
+<script type="text/javascript">
+    "use strict";
+    let goecharts_yPPayBhICApW = echarts.init(document.getElementById('yPPayBhICApW'), "white");
+    let option_yPPayBhICApW = {"color":["#c23531","#2f4554","#61a0a8","#d48265","#91c7ae","#749f83","#ca8622","#bda29a","#6e7074","#546570"],"dataZoom":[{"type":"inside","end":100,"xAxisIndex":[0]},{"type":"slider","end":100,"xAxisIndex":[0]}],"legend":{"show":true},"series":[{"name":"fund_502023","type":"line","waveAnimation":false,"data":[{"value":1.2,"XAxisIndex":0,"YAxisIndex":0},{"value":1.7929001,"XAxisIndex":0,"YAxisIndex":0},{"value":2.3823001,"XAxisIndex":0,"YAxisIndex":0},{"value":4.0425,"XAxisIndex":0,"YAxisIndex":0},{"value":5.4834,"XAxisIndex":0,"YAxisIndex":0},{"value":5.4834,"XAxisIndex":0,"YAxisIndex":0},{"value":4.5364,"XAxisIndex":0,"YAxisIndex":0},{"value":5.2056,"XAxisIndex":0,"YAxisIndex":0},{"value":7.1998997,"XAxisIndex":0,"YAxisIndex":0},{"value":7.2929997,"XAxisIndex":0,"YAxisIndex":0}],"markLine":{"data":[{"name":"平均值","type":"average"}]},"markPoint":{"data":[{"name":"最大值","type":"max"},{"name":"最小值","type":"min"}]}}],"title":{"text":"basic line example","subtext":"This is the subtitle."},"tooltip":{"show":false},"xAxis":[{"data":["2020-02-05","2020-02-06","2020-02-07","2020-02-10","2020-02-11","2020-02-12","2020-02-13","2020-02-14","2020-02-17","2020-02-18"]}],"yAxis":[{}]};
+    goecharts_yPPayBhICApW.setOption(option_yPPayBhICApW);
+        setInterval(function() {        let htmlobj = $.ajax({            url: "/date_test.json",            async: false,            dataType: "json"        });        let dataobj = htmlobj.responseText;        let datax = JSON.parse(dataobj);        let htmlobjy = $.ajax({            url: "/data_test.json",            async: false,            dataType: "json"        });        let dataobjy = htmlobjy.responseText;        let dataLine = JSON.parse(dataobjy);        option_yPPayBhICApW.xAxis[0].data = datax;        option_yPPayBhICApW.series[0].data = dataLine;        goecharts_yPPayBhICApW.setOption(option_yPPayBhICApW);    },    3000);
+</script>
+
+
+
+
+</body>
+</html>
